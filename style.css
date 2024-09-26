@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap:400,100,500,300italic,500italic,700italic,900,300");
+
+:root {
+    --pixel-size: 3px;
+    --pixel-gap: 2px;
+    --shadow-depth: 5px;
+    --shadow: #00000033;
+    --base-background: #84d07d;
+    --base-color: #5e785d;
+  }
+
+body{
+    font-family: "Montserrat", sans-serif; 
+    background-color: #0070a3;
+}
+
+*{
+    transition: 0.2s ease;
+}
+
+.all{
+    width: 320px;
+    height: 490px;
+    margin: auto;
+}
+
+.calculator{
+    width: 300px;
+    height: 470px;
+    margin-top: 20%;
+    background: rgb(0,0,0);
+    background: linear-gradient(-50deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px;
+}
+
+.screen{
+    width: 300px;
+    height: 60px;
+    margin: 0 auto 10px auto;
+    border-radius: 10px;
+    background: rgb(141, 196, 139);
+    background: var(--base-background);
+    box-shadow: inset var(--shadow-depth) var(--shadow-depth) calc(var(--shadow-depth) * 2) var(--shadow),
+              inset calc(var(--shadow-depth) * -1) calc(var(--shadow-depth) * -1) calc(var(--shadow-depth) * 2) var(--shadow);
+    font-family: "DotGothic16";
+    color: var(--base-color);
+}
+
+.screen::before{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    background: linear-gradient(to right, var(--shadow) var(--pixel-gap), transparent var(--pixel-gap)),
+              linear-gradient(to bottom, var(--shadow) var(--pixel-gap), transparent var(--pixel-gap));
+    background-size: var(--pixel-size) var(--pixel-size), var(--pixel-size) var(--pixel-size);
+}
+
+.screen > * {
+    mix-blend-mode: luminosity;
+  }
+
+.screenoutput{
+    color: black;
+    text-align: right;
+    padding-top: 5px;
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.screenoperation{
+    color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    padding-top: 5px;
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.keys{
+    text-align: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.key{
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.keycolor1{
+    background: rgba(0,0,0,1);
+}
+
+.keycolor1:hover{
+    background: rgb(31, 31, 31);
+}
+
+.keycolor2{
+    background: rgb(61, 61, 61);
+}
+
+.keycolor2:hover{
+    background: rgb(34, 34, 34);
+}
+
+.keycolor3{
+    background: rgb(211, 120, 0);
+}
+
+.keycolor3:hover{
+    background: rgb(172, 97, 0);
+}
+
+.credit{
+    width: 330px;
+    height: 40px;
+    padding-top: 15px;
+    margin-top: 10%;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.9px);
+    -webkit-backdrop-filter: blur(3.9px);
+    border: 1px solid rgba(255, 255, 255, 0.29);
+}
+
+.credit a:hover{
+    text-shadow: 2px 2px 8px #FF0000;
+}

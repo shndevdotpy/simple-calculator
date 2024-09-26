@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" class="css">
+</head>
+<body>
+    <div class="all">
+        <div class="calculator">
+            <div class="screen">
+                <div id="screenoperation" class="screenoperation"></div>
+                <div id="screenoutput" class="screenoutput"></div>
+            </div>
+            <div class="keys">
+                <table cellspacing="10" width="300" height="400">
+                    <tr>
+                        <td onclick="key('c')" colspan="2" class="key keycolor1">C</td>
+                        <td onclick="key('/')" class="key keycolor1">/</td>
+                        <td onclick="key('*')" class="key keycolor1">x</td>
+                    </tr>
+                    
+                    <tr>
+                        <td onclick="key('7')" class="key keycolor2">7</td>
+                        <td onclick="key('8')" class="key keycolor2">8</td>
+                        <td onclick="key('9')" class="key keycolor2">9</td>
+                        <td onclick="key('-')" class="key keycolor2">-</td>
+                    </tr>
+                    
+                    <tr>
+                        <td onclick="key('4')" class="key keycolor2">4</td>
+                        <td onclick="key('5')" class="key keycolor2">5</td>
+                        <td onclick="key('6')" class="key keycolor2">6</td>
+                        <td onclick="key('+')" class="key keycolor2">+</td>
+                    </tr>
+
+                    <tr>
+                        <td onclick="key('1')" class="key keycolor2">1</td>
+                        <td onclick="key('2')" class="key keycolor2">2</td>
+                        <td onclick="key('3')" class="key keycolor2">3</td>
+                        <td onclick="key('=')" rowspan="2" class="key keycolor3">=</td>
+                    </tr>
+
+                    <tr>
+                        <td onclick="key('0')" colspan="2" class="key keycolor2">0</td>
+                        <td onclick="key('.')" class="key keycolor2">.</td>
+                    </tr>
+                </table>
+            </div>
+        </div> 
+        <div class="credit">made with <a style="color: red">❤</a> by <a style="text-decoration: none; color: red;" href="https://shndevdotpy.github.io" target="_blank">shndev</a></div> 
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
