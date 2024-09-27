@@ -14,7 +14,6 @@ function key(key){
 
     //operation functions
     else if (key==='/'){
-        alert(number1)
         if (!document.getElementById("screenoutput").innerHTML.includes("/") &&
         !document.getElementById("screenoutput").innerHTML.includes("*") &&
         !document.getElementById("screenoutput").innerHTML.includes("+") &&
@@ -31,7 +30,7 @@ function key(key){
         !document.getElementById("screenoutput").innerHTML.includes("*") &&
         !document.getElementById("screenoutput").innerHTML.includes("+") &&
         !document.getElementById("screenoutput").innerHTML.includes("-")){
-            document.getElementById("screenoutput").innerHTML += "x";
+            document.getElementById("screenoutput").innerHTML += "*";
             number1 = parseInt(document.getElementById("screenoutput").innerHTML)
             operation = "*"
         }
@@ -112,8 +111,44 @@ function key(key){
                 numbers = document.getElementById("screenoutput").innerHTML;
                 //number2 = parseInt(document.getElementById("screenoutput").innerHTML.split("+").join(""));
                 //number2 = parseInt(Array.from(document.getElementById("screenoutput").innerHTML).filter(char => char !== '+').join(''));
-                number2 = getSecondNumber(numbers)
+                number2 = getSecondNumber('+',numbers)
                 op = parseInt(number1)+parseInt(number2);
+                document.getElementById("screenoutput").innerHTML = op;
+                document.getElementById("screenoperation").innerHTML = number1 + "+" + number2;
+
+            }
+        }
+        else if(operation==="-"){
+            if(!document.getElementById("screenoutput".innerHTML === "")){
+                numbers = document.getElementById("screenoutput").innerHTML;
+                //number2 = parseInt(document.getElementById("screenoutput").innerHTML.split("+").join(""));
+                //number2 = parseInt(Array.from(document.getElementById("screenoutput").innerHTML).filter(char => char !== '+').join(''));
+                number2 = getSecondNumber('-',numbers)
+                op = parseInt(number1)-parseInt(number2);
+                document.getElementById("screenoutput").innerHTML = op;
+                document.getElementById("screenoperation").innerHTML = number1 + "-" + number2;
+
+            }
+        }
+        else if(operation==="*"){
+            if(!document.getElementById("screenoutput".innerHTML === "")){
+                numbers = document.getElementById("screenoutput").innerHTML;
+                //number2 = parseInt(document.getElementById("screenoutput").innerHTML.split("+").join(""));
+                //number2 = parseInt(Array.from(document.getElementById("screenoutput").innerHTML).filter(char => char !== '+').join(''));
+                number2 = getSecondNumber('*',numbers)
+                op = parseInt(number1)*parseInt(number2);
+                document.getElementById("screenoutput").innerHTML = op;
+                document.getElementById("screenoperation").innerHTML = number1 + "*" + number2;
+
+            }
+        }
+        else if(operation==="/"){
+            if(!document.getElementById("screenoutput".innerHTML === "")){
+                numbers = document.getElementById("screenoutput").innerHTML;
+                //number2 = parseInt(document.getElementById("screenoutput").innerHTML.split("+").join(""));
+                //number2 = parseInt(Array.from(document.getElementById("screenoutput").innerHTML).filter(char => char !== '+').join(''));
+                number2 = getSecondNumber('/',numbers)
+                op = parseInt(number1)/parseInt(number2);
                 document.getElementById("screenoutput").innerHTML = op;
                 document.getElementById("screenoperation").innerHTML = number1 + "+" + number2;
 
@@ -124,8 +159,22 @@ function key(key){
     //equal function
 }
 
-function getSecondNumber(expression) {
-    // '+' karakterine göre böl ve ikinci sayıyı döndür
-    const parts = expression.split('+');
-    return parts.length > 1 ? parts[1].trim() : null;
+function getSecondNumber(op, expression) {
+    if(op==='+'){
+        const parts = expression.split('+');
+        return parts.length > 1 ? parts[1].trim() : null;
+    }
+    else if(op==='-'){
+        const parts = expression.split('-');
+        return parts.length > 1 ? parts[1].trim() : null;
+    }
+    else if(op==='/'){
+        const parts = expression.split('/');
+        return parts.length > 1 ? parts[1].trim() : null;
+    }
+    else if(op==='*'){
+        const parts = expression.split('*');
+        return parts.length > 1 ? parts[1].trim() : null;
+    }
+    
 }
