@@ -150,7 +150,7 @@ function key(key){
                 number2 = getSecondNumber('/',numbers)
                 op = parseInt(number1)/parseInt(number2);
                 document.getElementById("screenoutput").innerHTML = op;
-                document.getElementById("screenoperation").innerHTML = number1 + "+" + number2;
+                document.getElementById("screenoperation").innerHTML = number1 + "/" + number2;
 
             }
         }
