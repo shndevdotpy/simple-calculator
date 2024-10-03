@@ -1,4 +1,4 @@
 # Simple calculator made with Javascript
-Are u lucky? If u trust your luck, guess the randomly generated number.
+This is my first javascript project. Please ignore my mistakes :)
 ## Preview
 ![Preview](https://raw.githubusercontent.com/shndevdotpy/simple-calculator/refs/heads/main/calculator.png)
